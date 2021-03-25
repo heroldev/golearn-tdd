@@ -36,6 +36,7 @@ func TestCounter(test *testing.T) {
 				w.Done()
 			}(&wg)
 		}
+		wg.Wait()
 
 		assertCount(t, counter, wantedCount)
 
